@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>my website</title>
+    <link rel="stylesheet" href="scratch.css">
+
+  </head>
+  <body>
+    <main>
+      <h1 id="top">Consider the Lilies</h1>
+      <h3>Matthew 6:28-30</h3>
+
+      <p>
+        We are so grateful to know the symbolism behind the lilies of the field. Knowing that the Lord protects all of His creations helps us to know He protects us. 
+        <br>
+
+      <p>Through the Atonement of Jesus Christ our most important relationships can be forever. He is our personal and relational Redeemer. </p>
+
+      <img
+
+        class="hero-img"
+        src="https://churchofjesuschristtemples.org/assets/img/temples/taylorsville-utah-temple/taylorsville-utah-temple-44959-main.jpg"
+        alt="Consider the Lilies"
+        width="450"
+      >
+
+
+      <section id="gallery" class="carousel-wrap" aria-label="Photo carousel section">
+        <h3>Photo Gallery</h3>
+        <main class="carousel" aria-label="Photo carousel">
+          <section class="slides">
+            <figure class="slide active">
+              <img src="https://paigepaynecreations.com/cdn/shop/products/considerthelilies9.jpg?v=1680454051&width=1946" alt="Gallery image 1">
+            </figure>
+            <figure class="slide">
+              <img src="https://lightroom.adobe.com/v2c/spaces/65b4a72d60594787a5e637cfeae6e327/assets/e79181df4d7e4c99a419b957d6fca9b8/revisions/0790aef31ec22d628af890e1dd6949e2/renditions/5241f81b91541920665be906dd824142" alt="Gallery image 2">
+            </figure>
+            <figure class="slide">
+              <img src="https://images.squarespace-cdn.com/content/v1/62dedb31d313e227ebeb5521/1659044585240-0YHCLH8247L7LNRIQW7X/Scan620%2Badj%2BFinal.jpg?format=1500w" alt="Gallery image 3">
+            </figure>
+            <figure class="slide">
+              <img src="https://lightroom.adobe.com/v2c/spaces/65b4a72d60594787a5e637cfeae6e327/assets/7f36fd58011b4799ab09d5ddad4d6bdd/revisions/5b559fe1681ee8d6c5685e6e654d9ab6/renditions/d44742385eb2fbc7a0aaba6c13e5118a" alt="Gallery image 4">
+            </figure>
+            <figure class="slide">
+              <img src="https://lightroom.adobe.com/v2c/spaces/65b4a72d60594787a5e637cfeae6e327/assets/86fed435f8e04a5482a77a014430b519/revisions/66908c6062949255d050245c5ba36164/renditions/73541c82e11959ce0d245f3a5afa855c" alt="Gallery image 5">
+            </figure>
+          </section>
+
+          <div class="controls">
+            <button id="prev" type="button" aria-label="Previous image">Previous</button>
+            <button id="next" type="button" aria-label="Next image">Next</button>
+          </div>
+
+          <div class="dots" aria-label="Slide position">
+            <button class="dot active" type="button" aria-label="Go to image 1"></button>
+            <button class="dot" type="button" aria-label="Go to image 2"></button>
+            <button class="dot" type="button" aria-label="Go to image 3"></button>
+            <button class="dot" type="button" aria-label="Go to image 4"></button>
+            <button class="dot" type="button" aria-label="Go to image 5"></button>
+          </div>
+        </main>
+      </section>
+
+      <section id="video" aria-label="Embedded video">
+        <h3>Consider the Lilies of the Field</h3>
+        <ol>
+  <li>God is in control
+
+    <ul>
+      <li>He parted the red sea</li>
+      <li>He helped Esther save the jews</li>
+    </ul>
+  </li>
+  <li>The Atonement of Jesus Christ makes all things possible. </li>
+  <ul>
+    <li> He saved us from our sings</li>
+   <li> He understands us perfectly </li>
+<li> He Loves us infinitely </li>
+  </ul>
+</ol>
+        <div style="max-width: 990px; margin: 2rem auto; border-radius: 22px; overflow: hidden; box-shadow: 0 22px 35px rgba(0, 0, 0, 0.35);">
+          <iframe width="990" height="557" src="https://www.youtube.com/embed/EGPmeExypFA" title="Consider the Lilies of the Field | The Tabernacle Choir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <a class="back-to-top" href="#top">Back to top</a>
+      <heading> Back to home:</heading>
+<a href="index.html">Back to homepage</a>
+<br> <heading> Play a game:</heading>
+<a href="projects.html">Catch the Lilies</a>
+    </main>
+    <script>
+      // Carousel functionality
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Dot navigation
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+
+      // Auto-play (optional)
+      // setInterval(nextSlide, 5000);
+    </script>
+</html>
